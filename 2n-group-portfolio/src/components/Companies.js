@@ -1,9 +1,12 @@
 import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 
 const CompaniesContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
+  backgroundColor: '#021526',
+  color: '#E2E2B6',
 }));
 
 const CompanyCard = styled(Card)(({ theme }) => ({
@@ -11,10 +14,18 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   transition: 'transform 0.3s ease-in-out',
+  backgroundColor: '#03346E',
+  color: '#E2E2B6',
   '&:hover': {
     transform: 'translateY(-10px)',
+    backgroundColor: '#6EACDA',
+    color: '#021526',
   },
 }));
+
+const MotionTypography = motion(Typography);
+const MotionGrid = motion(Grid);
+const MotionCard = motion(CompanyCard);
 
 const companies = [
   {
@@ -34,27 +45,92 @@ const companies = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 const Companies = () => {
   return (
     <CompaniesContainer>
       <Container>
-        <Typography variant="h2" component="h2" gutterBottom align="center" sx={{ mb: 6 }}>
+        <MotionTypography 
+          variant="h2" 
+          component="h2" 
+          gutterBottom 
+          align="center" 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          sx={{ 
+            mb: 6,
+            color: '#E2E2B6',
+            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
+          }}
+        >
           Our Companies
-        </Typography>
-        <Grid container spacing={4}>
+        </MotionTypography>
+        <MotionGrid 
+          container 
+          spacing={4}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {companies.map((company, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <CompanyCard>
+            <MotionGrid 
+              item 
+              xs={12} 
+              md={4} 
+              key={index}
+              variants={itemVariants}
+            >
+              <MotionCard
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
                 <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="h5" component="h3" gutterBottom>
+                  <Typography 
+                    variant="h5" 
+                    component="h3" 
+                    gutterBottom
+                    sx={{ color: 'inherit' }}
+                  >
                     {company.name}
                   </Typography>
-                  <Typography variant="body1" paragraph>
+                  <Typography 
+                    variant="body1" 
+                    paragraph
+                    sx={{ color: 'inherit' }}
+                  >
                     {company.description}
                   </Typography>
                   <Button
                     variant="contained"
-                    color="primary"
+                    sx={{
+                      backgroundColor: '#6EACDA',
+                      color: '#021526',
+                      '&:hover': {
+                        backgroundColor: '#E2E2B6',
+                      },
+                    }}
                     href={company.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -62,10 +138,10 @@ const Companies = () => {
                     Visit Website
                   </Button>
                 </CardContent>
-              </CompanyCard>
-            </Grid>
+              </MotionCard>
+            </MotionGrid>
           ))}
-        </Grid>
+        </MotionGrid>
       </Container>
     </CompaniesContainer>
   );

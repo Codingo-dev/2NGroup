@@ -3,17 +3,17 @@ import { Box, Typography, Container, Grid, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: '#1a237e',
-  color: 'white',
-  padding: theme.spacing(6, 0),
+  padding: theme.spacing(4, 0),
+  backgroundColor: '#021526',
+  color: '#E2E2B6',
   marginTop: 'auto',
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
-  color: 'white',
+  color: '#E2E2B6',
   textDecoration: 'none',
   '&:hover': {
-    textDecoration: 'underline',
+    color: '#6EACDA',
   },
 }));
 
@@ -24,49 +24,51 @@ const Footer = () => {
         <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
-              2N Group
-            </Typography>
-            <Typography variant="body2">
-              All together for you
-            </Typography>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Quick Links
-            </Typography>
-            <Box display="flex" flexDirection="column">
-              <FooterLink href="#about" variant="body2">
-                About Us
-              </FooterLink>
-              <FooterLink href="#companies" variant="body2">
-                Our Companies
-              </FooterLink>
-              <FooterLink href="#contact" variant="body2">
-                Contact
-              </FooterLink>
-            </Box>
-          </Grid>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
               Contact Us
             </Typography>
             <Typography variant="body2">
               Email: info@2ngroup.com
             </Typography>
             <Typography variant="body2">
-              Phone: +123 456 7890
+              Phone: +1 (555) 123-4567
             </Typography>
           </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" gutterBottom>
+              Quick Links
+            </Typography>
+            <Box>
+              <FooterLink href="#" variant="body2" display="block">
+                Home
+              </FooterLink>
+              <FooterLink href="#" variant="body2" display="block">
+                About Us
+              </FooterLink>
+              <FooterLink href="#" variant="body2" display="block">
+                Our Companies
+              </FooterLink>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" gutterBottom>
+              Follow Us
+            </Typography>
+            <Box>
+              <FooterLink href="#" variant="body2" display="block">
+                LinkedIn
+              </FooterLink>
+              <FooterLink href="#" variant="body2" display="block">
+                Twitter
+              </FooterLink>
+              <FooterLink href="#" variant="body2" display="block">
+                Instagram
+              </FooterLink>
+            </Box>
+          </Grid>
         </Grid>
-        <Box mt={4} pt={2} borderTop="1px solid rgba(255, 255, 255, 0.1)">
-          <Typography variant="body2" align="center">
+        <Box mt={4} textAlign="center">
+          <Typography variant="body2">
             © {new Date().getFullYear()} 2N Group. All rights reserved.
-          </Typography>
-          <Typography variant="body2" align="center">
-            Website developed by{' '}
-            <FooterLink href="https://codingo.com" target="_blank" rel="noopener noreferrer">
-              Codingo
-            </FooterLink>
           </Typography>
         </Box>
       </Container>
