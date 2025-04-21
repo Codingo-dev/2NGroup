@@ -2,7 +2,6 @@ import React from 'react';
 import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-import { teal } from '@mui/material/colors';
 
 const CompaniesContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
@@ -11,13 +10,11 @@ const CompaniesContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
+  scrollMarginTop: '0px',
 }));
 
 const CompanyCard = styled(Card)(({ theme }) => ({
   height: '100%',
-  width: '80%',
-  margin: '0 auto',
   display: 'flex',
   flexDirection: 'column',
   transition: 'transform 0.3s ease-in-out',
@@ -26,8 +23,9 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   borderRadius: '16px',
   overflow: 'hidden',
   '&:hover': {
-    transform: 'scale(1.2)',
-    fontSize: '1.2rem',
+    transform: 'translateY(-10px)',
+    backgroundColor: '#6EACDA',
+    color: '#021526',
   },
 }));
 
@@ -45,7 +43,7 @@ const ContentSection = styled(Box)(({ theme }) => ({
   flexGrow: 1,
   display: 'flex',
   flexDirection: 'column',
-  justifyContent: 'center',
+  justifyContent: 'space-between',
 }));
 
 const MotionTypography = motion(Typography);
@@ -215,15 +213,16 @@ const Companies = () => {
                     <Button
                       variant="contained"
                       sx={{
-                        backgroundColor: '#E2E2B6',
+                        backgroundColor: '#6EACDA',
                         color: '#021526',
+                        '&:hover': {
+                          backgroundColor: '#E2E2B6',
+                        },
                         borderRadius: '8px',
                         padding: '8px 24px',
                         fontSize: '1rem',
                         fontWeight: 'bold',
-                        width: '30%',
-                        margin: '0 auto',
-                        textAlign: 'center',
+                        width: '100%',
                       }}
                       href={company.link}
                       target="_blank"

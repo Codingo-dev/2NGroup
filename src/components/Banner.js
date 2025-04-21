@@ -3,10 +3,8 @@ import { Box, Typography, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
-import logoImage from '../2n_logo.png';
-
 const BannerContainer = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(25deg, #021526 50%, #6EACDA 90%)',
+  background: 'linear-gradient(45deg, #03346E 30%, #6EACDA 90%)',
   color: '#E2E2B6',
   padding: theme.spacing(8, 0),
   textAlign: 'center',
@@ -17,6 +15,7 @@ const BannerContainer = styled(Box)(({ theme }) => ({
   alignItems: 'center',
   position: 'relative',
   overflow: 'hidden',
+  scrollMarginTop: '0px',
 }));
 
 const MotionTypography = motion(Typography);
@@ -29,9 +28,6 @@ const Banner = () => {
           variant="h1" 
           component="h1" 
           gutterBottom 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
           sx={{ 
             fontSize: { xs: '3rem', md: '4rem' }, 
             fontWeight: 'bold',
@@ -39,22 +35,11 @@ const Banner = () => {
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
           }}
         >
-          <img 
-            src={logoImage} 
-            alt="2N Logo" // Add alt text for accessibility
-            style={{ 
-              maxWidth: '100%', 
-              height: 'auto', 
-              maxHeight: '150px', // Adjust as needed
-            }} 
-          />
+          2N
         </MotionTypography>
         <MotionTypography 
           variant="h4" 
           component="h2" 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
           sx={{ 
             fontStyle: 'italic', 
             fontSize: { xs: '1.5rem', md: '2.5rem' },
@@ -62,7 +47,7 @@ const Banner = () => {
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
           }}
         >
-          For Business Management
+          All together for you
         </MotionTypography>
       </Container>
     </BannerContainer>

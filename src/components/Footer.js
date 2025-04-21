@@ -2,8 +2,6 @@ import React from 'react';
 import { Box, Typography, Container, Grid, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import logoImage from '../2n_logo.png';
-
 const FooterContainer = styled(Box)(({ theme }) => ({
   backgroundColor: '#021526',
   color: '#E2E2B6',
@@ -29,12 +27,7 @@ const Footer = () => {
   return (
     <FooterContainer>
       <Container>
-        <Grid container spacing={3}>
-          <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
-              <img src={logoImage} alt="2N Logo" style={{ width: '30%', height: 'auto' }} />
-            </Typography>
-          </Grid>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
               Quick Links
@@ -87,7 +80,17 @@ const Footer = () => {
               </Box>
             </Box>
           </Grid>
-          
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" gutterBottom>
+              Contact Us
+            </Typography>
+            <Typography variant="body2">
+              Email: info@2ngroup.com
+            </Typography>
+            <Typography variant="body2">
+              Phone: +1 (123) 456-7890
+            </Typography>
+          </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
               Follow Us
@@ -104,7 +107,7 @@ const Footer = () => {
                 </FooterLink>
               </Box>
               <Box component="li" sx={{ mb: 1 }}>
-                <FooterLink href="https://www.facebook.com/2nagencyeg" target="_blank" rel="noopener noreferrer">
+                <FooterLink href="#" target="_blank" rel="noopener noreferrer">
                   Facebook
                 </FooterLink>
               </Box>
@@ -113,7 +116,7 @@ const Footer = () => {
         </Grid>
         <Box sx={{ mt: 4, textAlign: 'center' }}>
           <Typography variant="body2">
-            © {new Date().getFullYear()} Codingo. All rights reserved.
+            © {new Date().getFullYear()} 2N Group. All rights reserved.
           </Typography>
         </Box>
       </Container>

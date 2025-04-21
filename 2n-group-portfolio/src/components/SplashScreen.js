@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
+import logoImage from '../2n_logo.png';
+
+
 const SplashScreen = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -57,7 +61,15 @@ const SplashScreen = ({ onComplete }) => {
                 textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
               }}
             >
-              2N
+              <img 
+            src={logoImage} 
+            alt="2N Logo" // Add alt text for accessibility
+            style={{ 
+              maxWidth: '100%', 
+              height: 'auto', 
+              maxHeight: '150px', // Adjust as needed
+            }} 
+          />
             </Typography>
           </motion.div>
         </Box>
