@@ -5,6 +5,7 @@ import AboutUs from './components/AboutUs';
 import Companies from './components/Companies';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
+import Brands from './components/BrandsAndStores';
 
 // Create a theme instance with the new color palette
 const theme = createTheme({
@@ -86,7 +87,8 @@ function App() {
           <main>
             <Banner />
             <AboutUs />
-            <Companies />
+            <Companies/>
+            <Brands/>
           </main>
           <Footer />
         </Box>

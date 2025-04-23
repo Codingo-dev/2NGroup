@@ -32,14 +32,14 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
-              <img src={logoImage} alt="2N Logo" style={{ width: '30%', height: 'auto' }} />
+              <img src={logoImage} alt="2N Logo" style={{ width: '30%', height: 'auto', marginLeft: '20px' }} />
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
               Quick Links
             </Typography>
-            <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
+            <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
               <Box component="li" sx={{ mb: 1 }}>
                 <FooterLink 
                   component="button" 
@@ -92,7 +92,7 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               Follow Us
             </Typography>
-            <Box component="ul" sx={{ listStyle: 'none', padding: 0 }}>
+            <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
               <Box component="li" sx={{ mb: 1 }}>
                 <FooterLink href="#" target="_blank" rel="noopener noreferrer">
                   LinkedIn

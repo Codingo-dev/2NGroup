@@ -3,7 +3,7 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
-import Image from '../image.avif';
+import Image from '../background.gif';
 
 
 const AboutContainer = styled(Box)(({ theme }) => ({
@@ -57,7 +57,7 @@ const AboutUs = () => {
           transition={{ duration: 0.8 }}
           sx={{ 
             mb: 6,
-            color: '#021526',
+            color: '#E2E2B6',
             fontWeight: 500,
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
           }}
