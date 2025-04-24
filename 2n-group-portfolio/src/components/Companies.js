@@ -57,17 +57,17 @@ const companies = [
     {
       name: 'Codingo - Software Development',
       description: 'Specialized in technology solutions, software development, and digital innovation. We create cutting-edge solutions that drive business growth and digital transformation.',
-      link: 'https://codingo.com',
+      link: 'https://codingo-launchpad-online.lovable.app/',
     },
     {
       name: 'UpperHand - Amazon SPN partner',
       description: 'focused on maximizing your sales and brand performance. We offer strategic account management, listing optimization, PPC, inventory help, and brand protection, adhering to Amazons best practices. Our goal is to provide expert guidance and hands-on execution, giving you a competitive edge. Partner with Upperhand to unlock your full Amazon potential and achieve tangible growth.',
-      link: 'https://upperhand.com',
+      link: 'https://upperhand-amazon-launchpad.lovable.app/',
     },
     {
       name: 'LongNeck - Marketing Agency',
       description: 'marketing agency that helps your brand stand out and achieve lasting growth through strategic, creative solutions. Our expert team offers diverse services, focusing on understanding your audience and delivering measurable results. Partner with LongNeck for marketing that reaches further and builds enduring brand connections.',
-      link: 'https://example.com',
+      link: 'https://longneck-reach-further.lovable.app/',
     },
   ];
 
