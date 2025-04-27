@@ -13,6 +13,24 @@ const AboutContainer = styled(Box)(({ theme }) => ({
   scrollMarginTop: '0px',
 }));
 
+const ImageContainer = styled(Box)(({ theme }) => ({
+  width: '100%',
+  height: '100%',
+  minHeight: '500px',
+  borderRadius: '16px',
+  overflow: 'hidden',
+  position: 'relative',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'linear-gradient(45deg, rgba(2, 21, 38, 0.7) 30%, rgba(110, 172, 218, 0.3) 90%)',
+  },
+}));
+
 const MotionTypography = motion(Typography);
 const MotionGrid = motion(Grid);
 
@@ -37,6 +55,17 @@ const textVariants = {
   },
 };
 
+const imageVariants = {
+  hidden: { opacity: 0, x: 20 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.8,
+    },
+  },
+};
+
 const AboutUs = () => {
   return (
     <AboutContainer id="about">
@@ -49,6 +78,34 @@ const AboutUs = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
+          <MotionGrid 
+            item 
+            xs={12} 
+            md={6} 
+            variants={imageVariants}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}
+          >
+            <ImageContainer
+              component={motion.div}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Box
+                component="img"
+                src="/about-us-image.jpg"
+                alt="2N Group Team"
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+              />
+            </ImageContainer>
+          </MotionGrid>
           <MotionGrid item xs={12} md={6} variants={textVariants}>
             <MotionTypography 
               variant="h2" 
@@ -101,45 +158,6 @@ const AboutUs = () => {
               At 2N Group, we believe in the power of synergy. By combining our strengths and expertise, 
               we create innovative solutions that drive growth and success for our partners and clients.
             </MotionTypography>
-          </MotionGrid>
-          <MotionGrid 
-            item 
-            xs={12} 
-            md={6} 
-            variants={textVariants}
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-            }}
-          >
-            <Box
-              component={motion.div}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              sx={{
-                width: '100%',
-                height: '100%',
-                minHeight: '400px',
-                background: 'linear-gradient(45deg, #03346E 30%, #6EACDA 90%)',
-                borderRadius: '16px',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}
-            >
-              <Typography
-                variant="h3"
-                sx={{
-                  color: '#E2E2B6',
-                  textAlign: 'center',
-                  padding: 4,
-                }}
-              >
-                Building the Future Together
-              </Typography>
-            </Box>
           </MotionGrid>
         </MotionGrid>
       </Container>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Container, Grid, Card, CardContent, Button } from '@mui/material';
+import { Box, Typography, Container, Grid, Card } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
@@ -10,18 +10,19 @@ const CompaniesContainer = styled(Box)(({ theme }) => ({
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
-  scrollMarginTop: '0px',
 }));
 
 const CompanyCard = styled(Card)(({ theme }) => ({
+  backgroundColor: '#03346E',
+  color: '#E2E2B6',
+  padding: theme.spacing(4),
+  borderRadius: '16px',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
-  transition: 'transform 0.3s ease-in-out',
-  backgroundColor: '#03346E',
-  color: '#E2E2B6',
-  borderRadius: '16px',
-  overflow: 'hidden',
+  alignItems: 'center',
+  textAlign: 'center',
+  transition: 'all 0.3s ease-in-out',
   '&:hover': {
     transform: 'translateY(-10px)',
     backgroundColor: '#6EACDA',
@@ -29,110 +30,36 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const LogoSection = styled(Box)(({ theme }) => ({
-  height: '200px',
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  background: 'linear-gradient(45deg, #03346E 30%, #6EACDA 90%)',
-  padding: theme.spacing(4),
-}));
-
-const ContentSection = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(4),
-  flexGrow: 1,
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'space-between',
-}));
-
-const MotionTypography = motion(Typography);
-const MotionGrid = motion(Grid);
-const MotionCard = motion(CompanyCard);
-const MotionLogoSection = motion(LogoSection);
-
 const companies = [
     {
-      name: 'Codingo - Software Development',
+    name: 'Codingo',
+    type: 'Software Development',
       description: 'Specialized in technology solutions, software development, and digital innovation. We create cutting-edge solutions that drive business growth and digital transformation.',
       link: 'https://codingo.com',
     },
     {
-      name: 'UpperHand - Amazon SPN partner',
-      description: 'focused on maximizing your sales and brand performance. We offer strategic account management, listing optimization, PPC, inventory help, and brand protection, adhering to Amazons best practices. Our goal is to provide expert guidance and hands-on execution, giving you a competitive edge. Partner with Upperhand to unlock your full Amazon potential and achieve tangible growth.',
+    name: 'UpperHand',
+    type: 'Amazon SPN Partner',
+    description: 'Focused on maximizing your sales and brand performance. We offer strategic account management, listing optimization, PPC, inventory help, and brand protection, adhering to Amazons best practices.',
       link: 'https://upperhand.com',
     },
     {
-      name: 'LongNeck - Marketing Agency',
-      description: 'marketing agency that helps your brand stand out and achieve lasting growth through strategic, creative solutions. Our expert team offers diverse services, focusing on understanding your audience and delivering measurable results. Partner with LongNeck for marketing that reaches further and builds enduring brand connections.',
+    name: 'LongNeck',
+    type: 'Marketing Agency',
+    description: 'Marketing agency that helps your brand stand out and achieve lasting growth through strategic, creative solutions. Our expert team offers diverse services, focusing on understanding your audience and delivering measurable results.',
       link: 'https://example.com',
     },
   ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.3,
-      delayChildren: 0.2,
-    },
-  },
-};
-
-const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-      duration: 0.5,
-    },
-  },
-};
-
-const logoVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      type: "spring",
-      stiffness: 200,
-      damping: 20,
-      duration: 0.5,
-    },
-  },
-};
-
-const titleVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
-  },
-};
 
 const Companies = () => {
   return (
     <CompaniesContainer id="companies">
       <Container>
-        <MotionTypography 
+        <Typography 
           variant="h2" 
           component="h2" 
           gutterBottom 
           align="center" 
-          variants={titleVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
           sx={{ 
             mb: 6,
             color: '#E2E2B6',
@@ -141,101 +68,74 @@ const Companies = () => {
           }}
         >
           Our Companies
-        </MotionTypography>
-        <MotionGrid 
-          container 
-          spacing={4}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        </Typography>
+        <Grid container spacing={4}>
           {companies.map((company, index) => (
-            <MotionGrid 
-              item 
-              xs={12} 
-              md={4} 
-              key={index}
-              variants={itemVariants}
-            >
-              <MotionCard
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 8px 16px rgba(0, 0, 0, 0.2)',
-                }}
-                transition={{ 
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 20,
-                }}
+            <Grid item xs={12} md={4} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
               >
-                <MotionLogoSection
-                  variants={logoVariants}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true }}
-                >
+                <CompanyCard>
                   <Typography
-                    variant="h3"
+                    variant="h4"
+                    component="h3"
+                    gutterBottom
                     sx={{
-                      color: '#E2E2B6',
                       fontWeight: 'bold',
-                      fontSize: { xs: '2.5rem', md: '3rem' },
-                      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+                      color: 'inherit',
                     }}
                   >
                     {company.name}
                   </Typography>
-                </MotionLogoSection>
-                <ContentSection>
-                  <Box>
-                    <MotionTypography 
-                      variant="body1" 
-                      paragraph
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.5, delay: 0.3 }}
+                  <Typography
+                    variant="subtitle1"
                       sx={{ 
-                        color: 'inherit',
-                        fontSize: { xs: '1rem', md: '1.1rem' },
-                        lineHeight: 1.8,
-                      }}
-                    >
-                      {company.description}
-                    </MotionTypography>
-                  </Box>
-                  <Box
-                    component={motion.div}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
+                      color: '#6EACDA',
+                      mb: 2,
+                      fontWeight: 'bold',
+                    }}
                   >
-                    <Button
-                      variant="contained"
+                    {company.type}
+                  </Typography>
+                  <Typography variant="body1" sx={{ mb: 3 }}>
+                      {company.description}
+                  </Typography>
+                  <motion.a
+                    href={company.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      textDecoration: 'none',
+                      width: '100%',
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Typography
+                      variant="button"
                       sx={{
+                        display: 'inline-block',
                         backgroundColor: '#6EACDA',
                         color: '#021526',
+                        padding: '8px 24px',
+                        borderRadius: '8px',
+                        fontWeight: 'bold',
                         '&:hover': {
                           backgroundColor: '#E2E2B6',
                         },
-                        borderRadius: '8px',
-                        padding: '8px 24px',
-                        fontSize: '1rem',
-                        fontWeight: 'bold',
-                        width: '100%',
                       }}
-                      href={company.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                     >
                       Visit Website
-                    </Button>
-                  </Box>
-                </ContentSection>
-              </MotionCard>
-            </MotionGrid>
+                    </Typography>
+                  </motion.a>
+                </CompanyCard>
+              </motion.div>
+            </Grid>
           ))}
-        </MotionGrid>
+        </Grid>
       </Container>
     </CompaniesContainer>
   );

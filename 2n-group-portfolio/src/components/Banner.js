@@ -3,10 +3,14 @@ import { Box, Typography, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
-import logoImage from '../2n_logo.png';
+import logoImage from '../logo_image.jpg';
+import background from '../banner_background.jpg';
 
 const BannerContainer = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(25deg, #021526 50%, #6EACDA 90%)',
+  background: 'linear-gradient(25deg, #000000 40%, #EFEEEA 90%)',
+  backgroundImage: `url(${background})`,
+  backgroundSize: 'cover',
+  backgroundPosition: 'center',
   color: '#E2E2B6',
   padding: theme.spacing(8, 0),
   textAlign: 'center',
@@ -36,7 +40,7 @@ const Banner = () => {
             fontSize: { xs: '3rem', md: '4rem' }, 
             fontWeight: 'bold',
             color: '#E2E2B6',
-            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
+            textShadow: '2px 2px 4px rgb(255, 255, 255)',
           }}
         >
           <img 
@@ -45,7 +49,9 @@ const Banner = () => {
             style={{ 
               maxWidth: '100%', 
               height: 'auto', 
-              maxHeight: '150px', // Adjust as needed
+              maxHeight: '250px', // Adjust as needed
+              borderRadius: '20%',
+              boxShadow: '0px 0px 10px 0 rgb(255, 255, 255)',
             }} 
           />
         </MotionTypography>
@@ -59,10 +65,13 @@ const Banner = () => {
             fontStyle: 'italic', 
             fontSize: { xs: '1.5rem', md: '2.5rem' },
             color: '#E2E2B6',
-            textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
           }}
         >
           For Business Management
+          <br />
+          <a href="#brands" style={{textDecoration: 'none', color: '#FE7743', marginTop: '50px' }}>
+            Discover Our Brands
+          </a>
         </MotionTypography>
       </Container>
     </BannerContainer>
