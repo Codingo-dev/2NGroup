@@ -38,7 +38,7 @@ const SplashScreen = ({ onComplete }) => {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#021526',
+            backgroundColor: '#000000',
             zIndex: 9999,
           }}
         >
@@ -67,7 +67,7 @@ const SplashScreen = ({ onComplete }) => {
             style={{ 
               maxWidth: '100%', 
               height: 'auto', 
-              maxHeight: '150px', // Adjust as needed
+              maxHeight: '250px', // Adjust as needed
             }} 
           />
             </Typography>

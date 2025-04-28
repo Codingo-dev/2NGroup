@@ -5,9 +5,9 @@ import { styled } from '@mui/material/styles';
 import logoImage from '../2n_logo.png';
 
 const FooterContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: '#021526',
-  color: '#E2E2B6',
-  padding: theme.spacing(6, 0),
+  backgroundColor: '#000000',
+  color: '#ffffff',
+  padding: theme.spacing(6, 10),
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
@@ -32,7 +32,10 @@ const Footer = () => {
         <Grid container spacing={3}>
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
-              <img src={logoImage} alt="2N Logo" style={{ width: '30%', height: 'auto', marginLeft: '20px' }} />
+              <img src={logoImage} alt="2N Logo" style={{ width: '30%', height: 'auto', marginLeft: '20px', marginRight: '0' }} />
+              <p style={{ fontSize: '20px', fontWeight: 'lighter', width: '70%', color: '#ffffff'}}>
+                A parent company with multiple brands and online stores.             
+              </p>
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
@@ -58,21 +61,6 @@ const Footer = () => {
               <Box component="li" sx={{ mb: 1 }}>
                 <FooterLink 
                   component="button" 
-                  onClick={() => scrollToSection('about')}
-                  sx={{ 
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    padding: 0,
-                    textAlign: 'left',
-                  }}
-                >
-                  About Us
-                </FooterLink>
-              </Box>
-              <Box component="li" sx={{ mb: 1 }}>
-                <FooterLink 
-                  component="button" 
                   onClick={() => scrollToSection('companies')}
                   sx={{ 
                     background: 'none',
@@ -82,35 +70,87 @@ const Footer = () => {
                     textAlign: 'left',
                   }}
                 >
-                  Our Companies
+                  Companies
+                </FooterLink>
+              </Box>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink 
+                  component="button" 
+                  onClick={() => scrollToSection('brands')}
+                  sx={{ 
+                    background: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
+                    padding: 0,
+                    textAlign: 'left',
+                  }}
+                >
+                  Brands & Stores
                 </FooterLink>
               </Box>
             </Box>
           </Grid>
-          
+
           <Grid item xs={12} md={4}>
             <Typography variant="h6" gutterBottom>
-              Follow Us
+              Brands & Stores
             </Typography>
             <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
               <Box component="li" sx={{ mb: 1 }}>
-                <FooterLink href="#" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
+                <FooterLink href="https://www.globed.eg" target="_blank" rel="noopener noreferrer">
+                Globed
                 </FooterLink>
               </Box>
               <Box component="li" sx={{ mb: 1 }}>
-                <FooterLink href="#" target="_blank" rel="noopener noreferrer">
-                  Twitter
+                <FooterLink href="https://grinpure-future-bloom.lovable.app/" target="_blank" rel="noopener noreferrer">
+                Grinpure
                 </FooterLink>
               </Box>
               <Box component="li" sx={{ mb: 1 }}>
-                <FooterLink href="https://www.facebook.com/2nagencyeg" target="_blank" rel="noopener noreferrer">
-                  Facebook
+                <FooterLink href="https://silviny.com/" target="_blank" rel="noopener noreferrer">
+                Silviny
+                </FooterLink>
+              </Box>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink href="https://joovely.com" target="_blank" rel="noopener noreferrer">
+                Joovely
                 </FooterLink>
               </Box>
             </Box>
           </Grid>
+
+          <Grid item xs={12} md={4}>
+            <Typography variant="h6" gutterBottom>
+              Companies
+            </Typography>
+            <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink href="https://codingo-launchpad-online.lovable.app/" target="_blank" rel="noopener noreferrer">
+                Codingo
+                </FooterLink>
+              </Box>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink href="https://upperhand-amazon-launchpad.lovable.app/" target="_blank" rel="noopener noreferrer">
+                UpperHand
+                </FooterLink>
+              </Box>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink href="https://longneck-reach-further.lovable.app/" target="_blank" rel="noopener noreferrer">
+                  LongNeck
+                </FooterLink>
+              </Box>
+            </Box>
+          </Grid>
+
+          <Typography variant="h6" gutterBottom
+          sx={{
+            margin: "0 auto",
+          }}
+          >
+            Follow Us on <FooterLink href="https://www.facebook.com/2nagencyeg" target="_blank" rel="noopener noreferrer">Facebook</FooterLink>
+          </Typography>
         </Grid>
+        <hr style={{ width: '90%' , margin: 'auto', color: '#ffffff'}} />
         <Box sx={{ mt: 4, textAlign: 'center' }}>
           <Typography variant="body2">
             © {new Date().getFullYear()} Codingo. All rights reserved.

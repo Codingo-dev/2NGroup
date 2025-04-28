@@ -2,12 +2,11 @@ import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
-
+import '../App.css';
 import logoImage from '../logo_image.jpg';
 import background from '../banner_background.jpg';
 
 const BannerContainer = styled(Box)(({ theme }) => ({
-  background: 'linear-gradient(25deg, #000000 40%, #EFEEEA 90%)',
   backgroundImage: `url(${background})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
@@ -51,7 +50,6 @@ const Banner = () => {
               height: 'auto', 
               maxHeight: '250px', // Adjust as needed
               borderRadius: '20%',
-              boxShadow: '0px 0px 10px 0 rgb(255, 255, 255)',
             }} 
           />
         </MotionTypography>
@@ -64,14 +62,10 @@ const Banner = () => {
           sx={{ 
             fontStyle: 'italic', 
             fontSize: { xs: '1.5rem', md: '2.5rem' },
-            color: '#E2E2B6',
+            color: '#ffffff',
           }}
         >
           For Business Management
-          <br />
-          <a href="#brands" style={{textDecoration: 'none', color: '#FE7743', marginTop: '50px' }}>
-            Discover Our Brands
-          </a>
         </MotionTypography>
       </Container>
     </BannerContainer>

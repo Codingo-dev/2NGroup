@@ -5,8 +5,8 @@ import { motion } from 'framer-motion';
 
 const CompaniesContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
-  background: 'linear-gradient(180deg, #273F4F 30%, #000000 90%)',
-  color: '#EFEEEA',
+  backgroundColor: '#ffffff',
+  color: '#000000',
   minHeight: '100vh',
   display: 'flex',
   flexDirection: 'column',
@@ -18,7 +18,7 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   color: '#EFEEEA',
   padding: theme.spacing(4),
   borderRadius: '16px',
-  height: '100%',
+  height: '350px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
@@ -26,8 +26,6 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   transition: 'all 0.3s ease-in-out',
   '&:hover': {
     transform: 'translateY(-10px)',
-    backgroundColor: '#EFEEEA',
-    color: '#000000',
   },
 }));
 
@@ -36,19 +34,19 @@ const companies = [
     name: 'Codingo',
     type: 'Software Development',
       description: 'Specialized in technology solutions, software development, and digital innovation. We create cutting-edge solutions that drive business growth and digital transformation.',
-      link: 'https://codingo.com',
+      link: 'https://codingo-launchpad-online.lovable.app/',
     },
     {
     name: 'UpperHand',
     type: 'Amazon SPN Partner',
     description: 'Focused on maximizing your sales and brand performance. We offer strategic account management, listing optimization, PPC, inventory help, and brand protection, adhering to Amazons best practices.',
-      link: 'https://upperhand.com',
+      link: 'https://upperhand-amazon-launchpad.lovable.app/',
     },
     {
     name: 'LongNeck',
     type: 'Marketing Agency',
     description: 'Marketing agency that helps your brand stand out and achieve lasting growth through strategic, creative solutions. Our expert team offers diverse services, focusing on understanding your audience and delivering measurable results.',
-      link: 'https://example.com',
+      link: 'https://longneck-reach-further.lovable.app/',
     },
   ];
 
@@ -63,15 +61,20 @@ const Companies = () => {
           align="center" 
           sx={{ 
             mb: 4,
-            color: '#FE7743',
+            color: '#000000',
             textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
             fontSize: { xs: '2.5rem', md: '3.5rem' },
+            fontWeight: '400',
           }}
         >
-          Our Companies
+          Companies
         </Typography>
-        <Grid container spacing={4} justifyContent="center">
-          {companies.map((company, index) => (
+        <hr style={{ width: '50%' , border: '1px solid #000000', margin: 'auto', color: '#000000', marginBottom: '40px'}} />
+
+        <div className='companies-container'
+             style={{display: 'grid', gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: '20px'}}
+        >
+        {companies.map((company, index) => (
             <Grid item xs={4} sm={4} md={4} key={index}>       
              <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -101,14 +104,7 @@ const Companies = () => {
                   >
                     {company.type}
                   </Typography>
-                  <Typography variant="body1" sx={{ mb: 3 }}
-                    style={{
-                      '&:hover': {
-                        color: '#000000',
-                        }
-                    }}
-                  >
-                    
+                  <Typography variant="body1" sx={{ mb: 3 }}>
                       {company.description}
                   </Typography>
                   <motion.a
@@ -126,15 +122,11 @@ const Companies = () => {
                       variant="button"
                       sx={{
                         display: 'inline-block',
-                        backgroundColor: '#FE7743',
-                        color: '#021526',
+                        backgroundColor: '#EFEEEA',
+                        color: '#000000',
                         padding: '8px 24px',
                         borderRadius: '8px',
                         fontWeight: 'bold',
-                        '&:hover': {
-                          backgroundColor: '#000000',
-                          color: '#EFEEEA',
-                        },
                       }}
                     >
                       Visit Website
@@ -144,7 +136,9 @@ const Companies = () => {
               </motion.div>
             </Grid>
           ))}
-        </Grid>
+        </div>
+
+
       </Container>
     </CompaniesContainer>
   );

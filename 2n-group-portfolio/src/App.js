@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Box, CssBaseline, ThemeProvider, createTheme } from '@mui/material';
 import Banner from './components/Banner';
-import AboutUs from './components/AboutUs';
+import Info from './components/Info';
 import Companies from './components/Companies';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
@@ -11,22 +11,22 @@ import Brands from './components/BrandsAndStores';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#03346E',
-      light: '#6EACDA',
-      dark: '#021526',
+      main: '#000000',
+      light: '#ffffff',
+      dark: '#000000',
     },
     secondary: {
-      main: '#6EACDA',
-      light: '#03346E',
-      dark: '#021526',
+      main: '#ffffff',
+      light: '#000000',
+      dark: '#ffffff',
     },
     text: {
       primary: '#E2E2B6',
-      secondary: '#6EACDA',
+      secondary: '#ffffff',
     },
     background: {
-      default: '#021526',
-      paper: '#03346E',
+      default: '#000000',
+      paper: '#000000',
     },
   },
   typography: {
@@ -47,10 +47,10 @@ const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          color: '#E2E2B6',
+          color: '#ffffff',
           '&:hover': {
-            backgroundColor: '#6EACDA',
-            color: '#021526',
+            backgroundColor: '#ffffff',
+            color: '#000000',
           },
         },
       },
@@ -58,8 +58,8 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: '#03346E',
-          color: '#E2E2B6',
+          backgroundColor: '#000000',
+          color: '#ffffff',
         },
       },
     },
@@ -86,7 +86,7 @@ function App() {
         >
           <main>
             <Banner />
-            <AboutUs />
+            <Info />
             <Companies/>
             <Brands/>
           </main>

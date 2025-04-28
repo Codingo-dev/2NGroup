@@ -9,16 +9,16 @@ import SilvinyLogo from '../Silviny_logo.jpg';
 
 const BrandsContainer = styled(Box)(({ theme }) => ({
   padding: theme.spacing(8, 0),
-  backgroundColor: '#021526',
-  color: '#E2E2B6',
+  backgroundColor: '#ffffff',
+  color: '#000000',
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
 }));
 
 const BrandCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#03346E',
-  color: '#E2E2B6',
+  backgroundColor: '#000000',
+  color: '#ffffff',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '100%',
@@ -32,13 +32,13 @@ const BrandCard = styled(Card)(({ theme }) => ({
   minHeight: '300px',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
-    backgroundColor: '#6EACDA',
-    color: '#021526',
+    backgroundColor: '#ffffff',
+    color: '#000000',
     '&::before': {
       transform: 'scale(1.1)',
     },
     '& .content': {
-      backgroundColor: 'rgba(2, 21, 38, 0.8)',
+      backgroundColor: 'rgba(0, 0, 0, 0.8)',
     }
   },
   '&::before': {
@@ -57,7 +57,7 @@ const BrandCard = styled(Card)(({ theme }) => ({
   '& .content': {
     position: 'relative',
     zIndex: 1,
-    backgroundColor: 'rgba(2, 21, 38, 0.7)',
+    backgroundColor: 'rgba(0, 0, 0, 0.8)',
     padding: theme.spacing(3),
     borderRadius: '12px',
     width: '100%',
@@ -141,31 +141,22 @@ const BrandsAndStores = () => {
             align="center" 
             sx={{ 
               mb: 6,
-              color: '#E2E2B6',
+              color: '#000000',
+              fontWeight: '400',
               textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
               fontSize: { xs: '2.5rem', md: '3.5rem' },
             }}
           >
             Our Brands & Stores
           </Typography>
-          <Grid 
-            container 
-            spacing={4} 
-            sx={{ 
-              display: 'flex', 
-              justifyContent: 'center',
-              gap: '20px'
-            }}
-          >
+          <hr style={{ width: '50%' , border: '1px solid #000000', margin: 'auto', color: '#000000', marginBottom: '40px'}} />
+            <div className='companies-container'
+             style={{display: 'grid', gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: '30px', margin:'auto', width:'80%'}}
+            >
             {brandsAndStores.map((brand, index) => (
               <Grid 
                 item 
                 key={index}
-                sx={{
-                  width: { xs: '100%', md: '40%' },
-                  maxWidth: '40%',
-                  flex: '0 0 40%'
-                }}
               >
                 <motion.div
                   variants={itemVariants}
@@ -202,9 +193,13 @@ const BrandsAndStores = () => {
                         <Typography
                           variant="subtitle1"
                           sx={{
-                            color: '#6EACDA',
+                            color: '#000000',
                             mb: 2,
                             fontWeight: 'bold',
+                            backgroundColor: '#ffffff',
+                            width: '30%',
+                            margin: 'auto',
+                            borderRadius: '5px',
                           }}
                         >
                           {brand.type}
@@ -220,7 +215,7 @@ const BrandsAndStores = () => {
                 </motion.div>
               </Grid>
             ))}
-          </Grid>
+          </div>
         </motion.div>
       </Container>
     </BrandsContainer>
