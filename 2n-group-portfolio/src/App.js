@@ -6,7 +6,8 @@ import Companies from './components/Companies';
 import Footer from './components/Footer';
 import SplashScreen from './components/SplashScreen';
 import Brands from './components/BrandsAndStores';
-
+import AboutUs from './components/AboutUsDetailed';
+import Navbar from './components/Navbar';
 // Create a theme instance with the new color palette
 const theme = createTheme({
   palette: {
@@ -84,12 +85,14 @@ function App() {
             color: 'text.primary',
           }}
         >
-          <main>
+          <Navbar />
+          <Box sx={{ pt: 8 }}>
             <Banner />
             <Info />
             <Companies/>
             <Brands/>
-          </main>
+            <AboutUs/>
+          </Box>
           <Footer />
         </Box>
       )}

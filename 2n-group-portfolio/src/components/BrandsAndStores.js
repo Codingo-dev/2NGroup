@@ -174,7 +174,7 @@ const BrandsAndStores = () => {
                     <BrandCard 
                       sx={{
                         '&::before': {
-                          backgroundImage: `url(${brand.image})`,
+                          backgroundColor: '#ffffff',
                         }
                       }}
                     >

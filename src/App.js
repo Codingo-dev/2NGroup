@@ -1,11 +1,13 @@
 import React from 'react';
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, Box } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Banner from './components/Banner';
 import AboutUs from './components/AboutUs';
 import Companies from './components/Companies';
 import BrandsAndStores from './components/BrandsAndStores';
+import AboutUsDetailed from './components/AboutUsDetailed';
 import Footer from './components/Footer';
+import Navbar from '../2n-group-portfolio/src/components/Navbar';
 
 const theme = createTheme({
   palette: {
@@ -37,11 +39,15 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Banner />
-      <AboutUs />
-      <Companies />
-      <BrandsAndStores />
-      <Footer />
+      <Navbar />
+      <Box sx={{ pt: 8 }}>
+        <Banner />
+        <AboutUs />
+        <Companies />
+        <BrandsAndStores />
+        <AboutUsDetailed />
+        <Footer />
+      </Box>
     </ThemeProvider>
   );
 }
