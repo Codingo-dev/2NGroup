@@ -86,7 +86,7 @@ function App() {
           }}
         >
           <Navbar />
-          <Box sx={{ pt: 8 }}>
+          <Box sx={{ pt: 8}}>
             <Banner />
             <Info />
             <Companies/>

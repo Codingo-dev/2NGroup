@@ -3,38 +3,22 @@ import { Box, Typography, Container, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { motion } from 'framer-motion';
 
-import image from '../about_us.jpeg';
+import image from '../info.jpg';
 // import Button from '@mui/material/Button';
 
 
 const InfoContainer = styled(Box)(({ theme }) => ({
-  padding: theme.spacing(8, 0),
+  padding: theme.spacing(10, 0),
   backgroundColor: '#ffffff',
   color: '#000000',
-  minHeight: '115vh',
+  minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
   scrollMarginTop: '0px',
+  marginRight: 'auto',
+  marginLeft: 'auto',
+  width: '100%',
 }));
-
-// const ImageContainer = styled(Box)(({ theme }) => ({
-//   width: '100%',
-//   height: '100%',
-//   minHeight: '500px',
-//   width: '500px',
-//   borderRadius: '16px',
-//   overflow: 'hidden',
-//   position: 'relative',
-//   '&::after': {
-//     content: '""',
-//     position: 'absolute',
-//     top: 0,
-//     left: 0,
-//     right: 0,
-//     bottom: 0,
-//     background: 'linear-gradient(45deg, rgba(15, 16, 17, 0.7) 30%, rgba(110, 172, 218, 0.3) 90%)',
-//   },
-// }));
 
 const MotionTypography = motion(Typography);
 const MotionGrid = motion(Grid);
@@ -60,30 +44,14 @@ const textVariants = {
   },
 };
 
-// const imageVariants = {
-//   hidden: { opacity: 0, x: 20 },
-//   visible: {
-//     opacity: 1,
-//     x: 0,
-//     transition: {
-//       duration: 0.8,
-//     },
-//   },
-// };
-
 const Info = () => {
   return (
     <InfoContainer  id="info">
       <Container maxWidth="lg">
-        <MotionGrid 
-          container 
-          spacing={6}
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <div className='InfoContainer'
+              style={{display: 'grid', gridTemplateColumns: "repeat(auto-fill, minmax(400px, 1fr))", gap: '30px'}}
         >
-          <img src={image} alt="2N Group Team" style={{ width: '400px', height: '400px', borderRadius: '16px', position: 'absolute'}} />
+          <img src={image} alt="2N Group Team" style={{ width: '80%', height: '400px', borderRadius: '16px', marginBottom: '100px', marginRight: 'auto', marginLeft: 'auto'}} />
          
           <MotionGrid item xs={12} md={6} variants={textVariants}>
            
@@ -97,7 +65,6 @@ const Info = () => {
                 fontWeight: '400',
                 textShadow: '1px 1px 2px rgba(0, 0, 0, 0.3)',
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
-                marginLeft: '500px',
               }}
             >
               2N Group
@@ -110,7 +77,8 @@ const Info = () => {
                 color: '#000000',
                 fontSize: { xs: '1rem', md: '1.1rem' },
                 lineHeight: 1.8,
-                marginLeft: '500px',
+                marginRight: 'auto',
+                marginLeft: 'auto',
               }}
             >
               2N Group is a dynamic conglomerate that brings together three specialized companies under one umbrella, 
@@ -121,28 +89,9 @@ const Info = () => {
               At 2N Group, we believe in the power of synergy. By combining our strengths and expertise, 
               we create innovative solutions that drive growth and success for our partners and clients.
             </MotionTypography>
-            
-            {/* <MotionTypography>
-              <Button variant="contained" color="primary"
-              style={{
-                marginLeft: '700px',
-                color: '#000000',
-                backgroundColor: '#EFEEEA',
-                fontWeight: 'bold',
-                fontSize: '1.2rem',
-                borderRadius: '10px',
-                transition: 'transform 0.3s ease',
-                '&:hover': {
-                  backgroundColor: '#E2E2B6',
-                  transform: 'scale(1.2)',
-                },
 
-              }}>
-                Discover Our Companies
-              </Button>
-            </MotionTypography> */}
           </MotionGrid>
-        </MotionGrid>
+        </div>
       </Container>
     </InfoContainer>
   );
