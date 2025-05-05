@@ -26,8 +26,8 @@ const theme = createTheme({
       secondary: '#ffffff',
     },
     background: {
-      default: '#000000',
-      paper: '#000000',
+      default: '#ffffff',
+      paper: '#ffffff',
     },
   },
   typography: {
@@ -83,6 +83,7 @@ function App() {
             minHeight: '100vh',
             bgcolor: 'background.default',
             color: 'text.primary',
+            margin: 'auto',
           }}
         >
           <Navbar />

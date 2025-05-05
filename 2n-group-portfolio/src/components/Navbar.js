@@ -75,6 +75,7 @@ const NavButton = styled(Button)(({ theme }) => ({
   },
   '&:hover': {
     backgroundColor: 'transparent',
+    color: '#ffffff',
     transform: 'translateY(-2px)',
   },
 }));
