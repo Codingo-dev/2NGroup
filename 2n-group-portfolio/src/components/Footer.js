@@ -11,7 +11,7 @@ const FooterContainer = styled(Box)(({ theme }) => ({
 }));
 
 const FooterLink = styled(Link)(({ theme }) => ({
-  color: '#E2E2B6',
+  color: '#ffffff',
   textDecoration: 'none',
   '&:hover': {
     color: '#6EACDA',
@@ -39,7 +39,7 @@ const Footer = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{color: '#ffffff'}}>
               Quick Links
             </Typography>
             <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
@@ -88,11 +88,19 @@ const Footer = () => {
                   Brands & Stores
                 </FooterLink>
               </Box>
+              <Box component="li" sx={{ mb: 1 }}>
+                <FooterLink 
+                  component="button" 
+                  onClick={() => scrollToSection('about-detailed')}
+                >
+                  About Us
+                </FooterLink>
+              </Box>
             </Box>
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{color: '#ffffff'}}>
               Brands & Stores
             </Typography>
             <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
@@ -120,7 +128,7 @@ const Footer = () => {
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Typography variant="h6" gutterBottom>
+            <Typography variant="h6" gutterBottom sx={{color: '#ffffff'}}>
               Companies
             </Typography>
             <Box component="ul" sx={{ listStyle: 'none', padding: 1 }}>
@@ -145,6 +153,7 @@ const Footer = () => {
           <Typography variant="h6" gutterBottom
           sx={{
             margin: "0 auto",
+            color: '#ffffff'
           }}
           >
             Follow Us on <FooterLink href="https://www.facebook.com/2nagencyeg" target="_blank" rel="noopener noreferrer">Facebook</FooterLink>

@@ -29,40 +29,10 @@ const BrandCard = styled(Card)(({ theme }) => ({
   transition: 'all 0.3s ease-in-out',
   position: 'relative',
   overflow: 'hidden',
-  minHeight: '300px',
+  minHeight: '250px',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
-    backgroundColor: '#ffffff',
-    color: '#000000',
-    '&::before': {
-      transform: 'scale(1.1)',
-    },
-    '& .content': {
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    }
   },
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundRepeat: 'no-repeat',
-    opacity: 0.5,
-    transition: 'transform 0.3s ease-in-out',
-  },
-  '& .content': {
-    position: 'relative',
-    zIndex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
-    padding: theme.spacing(3),
-    borderRadius: '12px',
-    width: '100%',
-    transition: 'background-color 0.3s ease-in-out',
-  }
 }));
 
 const brandsAndStores = [
@@ -150,7 +120,7 @@ const BrandsAndStores = () => {
             Our Brands & Stores
           </Typography>
           <hr style={{ width: '50%' , border: '1px solid #000000', margin: 'auto', color: '#000000', marginBottom: '40px'}} />
-            <div className='companies-container'
+            <div className='BrandsContainer'
              style={{display: 'grid', gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: '30px', margin:'auto', width:'80%'}}
             >
             {brandsAndStores.map((brand, index) => (
@@ -171,13 +141,7 @@ const BrandsAndStores = () => {
                       display: 'block'
                     }}
                   >
-                    <BrandCard 
-                      sx={{
-                        '&::before': {
-                          backgroundColor: '#ffffff',
-                        }
-                      }}
-                    >
+                    <BrandCard>
                       <div className="content">
                         <Typography
                           variant="h4"
@@ -186,6 +150,7 @@ const BrandsAndStores = () => {
                           sx={{
                             fontWeight: 'bold',
                             color: 'inherit',
+                            marginTop: '20px',
                           }}
                         >
                           {brand.name}
@@ -200,12 +165,17 @@ const BrandsAndStores = () => {
                             width: '30%',
                             margin: 'auto',
                             borderRadius: '5px',
+                            marginTop: '20px',
                           }}
                         >
                           {brand.type}
                         </Typography>
                         <Typography 
                           variant="body1"
+                          sx={{
+                            color: '#ffffff',
+                            marginTop: '20px',
+                          }}
                         >
                           {brand.description}
                         </Typography>

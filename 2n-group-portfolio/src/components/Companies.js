@@ -15,7 +15,7 @@ const CompaniesContainer = styled(Box)(({ theme }) => ({
 
 const CompanyCard = styled(Card)(({ theme }) => ({
   backgroundColor: '#000000',
-  color: '#EFEEEA',
+  color: '#ffffff',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '350px',
@@ -97,14 +97,14 @@ const Companies = () => {
                   <Typography
                     variant="subtitle1"
                       sx={{ 
-                      color: '#EFEEEA',
+                      color: '#ffffff',
                       mb: 2,
                       fontWeight: 'bold',
                     }}
                   >
                     {company.type}
                   </Typography>
-                  <Typography variant="body1" sx={{ mb: 3 }}>
+                  <Typography variant="body1" sx={{ mb: 3, color: '#ffffff' }}>
                       {company.description}
                   </Typography>
                   <motion.a

@@ -22,7 +22,7 @@ const theme = createTheme({
       dark: '#ffffff',
     },
     text: {
-      primary: '#E2E2B6',
+      primary: '#000000',
       secondary: '#ffffff',
     },
     background: {
@@ -41,7 +41,7 @@ const theme = createTheme({
       'sans-serif',
     ].join(','),
     allVariants: {
-      color: '#E2E2B6',
+      color: '#000000',
     },
   },
   components: {

@@ -13,8 +13,8 @@ const AboutDetailedContainer = styled(Box)(({ theme }) => ({
 }));
 
 const ValueCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  // background: 'radial-gradient(circle, white, rgba(0, 0, 0))', 
+  color: '#000000',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '100%',
@@ -25,11 +25,9 @@ const ValueCard = styled(Card)(({ theme }) => ({
   transition: 'all 0.3s ease-in-out',
   position: 'relative',
   overflow: 'hidden',
-  minHeight: '300px',
+  minHeight: '250px',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
-    backgroundColor: '#ffffff',
-    color: '#000000',
     '&::before': {
       transform: 'scale(1.1)',
     },
@@ -64,6 +62,7 @@ const ValueCard = styled(Card)(({ theme }) => ({
 const TeamCard = styled(Card)(({ theme }) => ({
   backgroundColor: '#000000',
   color: '#ffffff',
+  boxShadow: '0 0 50px 0 rgba(0, 0, 0, 0.8)',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '100%',
@@ -77,8 +76,6 @@ const TeamCard = styled(Card)(({ theme }) => ({
   minHeight: '300px',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
-    backgroundColor: '#ffffff',
-    color: '#000000',
     '&::before': {
       transform: 'scale(1.1)',
     },
@@ -260,13 +257,13 @@ const AboutUsDetailed = () => {
                 <Grid item xs={12} sm={6} md={3} key={index}>
                   <motion.div variants={itemVariants}>
                     <ValueCard>
-                      <Typography variant="h1" sx={{ mb: 2, fontSize: '3rem' }}>
+                      <Typography variant="h1" sx={{ mb: 2, fontSize: '3rem'}}>
                         {value.icon}
                       </Typography>
-                      <Typography variant="h5" component="h3" gutterBottom>
+                      <Typography variant="h5" component="h3" gutterBottom sx={{fontWeight: 'bold', color: '#ffffff'}}>
                         {value.title}
                       </Typography>
-                      <Typography variant="body1">
+                      <Typography variant="body1" sx={{color: '#ffffff'}}>
                         {value.description}
                       </Typography>
                     </ValueCard>
@@ -311,20 +308,20 @@ const AboutUsDetailed = () => {
                           border: '3px solid #000000',
                         }}
                       />
-                      <Typography variant="h5" component="h3" gutterBottom>
+                      <Typography variant="h5" component="h3" gutterBottom sx={{color: '#ffffff'}}>
                         {member.name}
                       </Typography>
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          color: '#000000',
+                          color: '#ffffff',
                           mb: 2,
                           fontWeight: 'bold',
                         }}
                       >
                         {member.position}
                       </Typography>
-                      <Typography variant="body2">
+                      <Typography variant="body2" sx={{color: '#ffffff'}}>
                         {member.description}
                       </Typography>
                     </TeamCard>
