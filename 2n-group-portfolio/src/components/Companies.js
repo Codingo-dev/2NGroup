@@ -14,8 +14,8 @@ const CompaniesContainer = styled(Box)(({ theme }) => ({
 }));
 
 const CompanyCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: '#ffffff',
+  color: '#000000',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '350px',
@@ -24,6 +24,7 @@ const CompanyCard = styled(Card)(({ theme }) => ({
   alignItems: 'center',
   textAlign: 'center',
   transition: 'all 0.3s ease-in-out',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
   '&:hover': {
     transform: 'translateY(-10px)',
   },
@@ -97,14 +98,14 @@ const Companies = () => {
                   <Typography
                     variant="subtitle1"
                       sx={{ 
-                      color: '#ffffff',
+                      color: '#000000',
                       mb: 2,
                       fontWeight: 'bold',
                     }}
                   >
                     {company.type}
                   </Typography>
-                  <Typography variant="body1" sx={{ mb: 3, color: '#ffffff' }}>
+                  <Typography variant="body1" sx={{ mb: 3, color: '#000000' }}>
                       {company.description}
                   </Typography>
                   <motion.a
@@ -122,8 +123,8 @@ const Companies = () => {
                       variant="button"
                       sx={{
                         display: 'inline-block',
-                        backgroundColor: '#EFEEEA',
-                        color: '#000000',
+                        backgroundColor: '#000000',
+                        color: '#ffffff',
                         padding: '8px 24px',
                         borderRadius: '8px',
                         fontWeight: 'bold',

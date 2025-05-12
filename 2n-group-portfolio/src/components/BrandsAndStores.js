@@ -17,8 +17,8 @@ const BrandsContainer = styled(Box)(({ theme }) => ({
 }));
 
 const BrandCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#000000',
-  color: '#ffffff',
+  backgroundColor: '#ffffff',
+  color: '#000000',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '100%',
@@ -30,6 +30,7 @@ const BrandCard = styled(Card)(({ theme }) => ({
   position: 'relative',
   overflow: 'hidden',
   minHeight: '250px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
   },
@@ -158,10 +159,10 @@ const BrandsAndStores = () => {
                         <Typography
                           variant="subtitle1"
                           sx={{
-                            color: '#000000',
+                            color: '#ffffff',
                             mb: 2,
                             fontWeight: 'bold',
-                            backgroundColor: '#ffffff',
+                            backgroundColor: '#000000',
                             width: '30%',
                             margin: 'auto',
                             borderRadius: '5px',
@@ -173,7 +174,7 @@ const BrandsAndStores = () => {
                         <Typography 
                           variant="body1"
                           sx={{
-                            color: '#ffffff',
+                            color: '#000000',
                             marginTop: '20px',
                           }}
                         >

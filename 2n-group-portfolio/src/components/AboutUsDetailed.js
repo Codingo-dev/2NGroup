@@ -13,7 +13,7 @@ const AboutDetailedContainer = styled(Box)(({ theme }) => ({
 }));
 
 const ValueCard = styled(Card)(({ theme }) => ({
-  // background: 'radial-gradient(circle, white, rgba(0, 0, 0))', 
+  backgroundColor: '#ffffff',
   color: '#000000',
   padding: theme.spacing(4),
   borderRadius: '16px',
@@ -26,13 +26,14 @@ const ValueCard = styled(Card)(({ theme }) => ({
   position: 'relative',
   overflow: 'hidden',
   minHeight: '250px',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
   '&:hover': {
     transform: 'translateY(-10px) scale(1.02)',
     '&::before': {
       transform: 'scale(1.1)',
     },
     '& .content': {
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      backgroundColor: '#ffffff',
     }
   },
   '&::before': {
@@ -51,7 +52,7 @@ const ValueCard = styled(Card)(({ theme }) => ({
   '& .content': {
     position: 'relative',
     zIndex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: '#ffffff',
     padding: theme.spacing(3),
     borderRadius: '12px',
     width: '100%',
@@ -60,9 +61,9 @@ const ValueCard = styled(Card)(({ theme }) => ({
 }));
 
 const TeamCard = styled(Card)(({ theme }) => ({
-  backgroundColor: '#000000',
-  color: '#ffffff',
-  boxShadow: '0 0 50px 0 rgba(0, 0, 0, 0.8)',
+  backgroundColor: '#ffffff',
+  color: '#000000',
+  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.5)',
   padding: theme.spacing(4),
   borderRadius: '16px',
   height: '100%',
@@ -80,7 +81,7 @@ const TeamCard = styled(Card)(({ theme }) => ({
       transform: 'scale(1.1)',
     },
     '& .content': {
-      backgroundColor: 'rgba(0, 0, 0, 0.8)',
+      backgroundColor: '#ffffff',
     }
   },
   '&::before': {
@@ -99,7 +100,7 @@ const TeamCard = styled(Card)(({ theme }) => ({
   '& .content': {
     position: 'relative',
     zIndex: 1,
-    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+    backgroundColor: '#ffffff',
     padding: theme.spacing(3),
     borderRadius: '12px',
     width: '100%',
@@ -260,10 +261,10 @@ const AboutUsDetailed = () => {
                       <Typography variant="h1" sx={{ mb: 2, fontSize: '3rem'}}>
                         {value.icon}
                       </Typography>
-                      <Typography variant="h5" component="h3" gutterBottom sx={{fontWeight: 'bold', color: '#ffffff'}}>
+                      <Typography variant="h5" component="h3" gutterBottom sx={{fontWeight: 'bold', color: '#000000'}}>
                         {value.title}
                       </Typography>
-                      <Typography variant="body1" sx={{color: '#ffffff'}}>
+                      <Typography variant="body1" sx={{color: '#000000'}}>
                         {value.description}
                       </Typography>
                     </ValueCard>
@@ -308,20 +309,20 @@ const AboutUsDetailed = () => {
                           border: '3px solid #000000',
                         }}
                       />
-                      <Typography variant="h5" component="h3" gutterBottom sx={{color: '#ffffff'}}>
+                      <Typography variant="h5" component="h3" gutterBottom sx={{color: '#000000'}}>
                         {member.name}
                       </Typography>
                       <Typography
                         variant="subtitle1"
                         sx={{
-                          color: '#ffffff',
+                          color: '#000000',
                           mb: 2,
                           fontWeight: 'bold',
                         }}
                       >
                         {member.position}
                       </Typography>
-                      <Typography variant="body2" sx={{color: '#ffffff'}}>
+                      <Typography variant="body2" sx={{color: '#000000'}}>
                         {member.description}
                       </Typography>
                     </TeamCard>
